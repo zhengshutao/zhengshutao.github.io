@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>ShuTao Zheng</title>
+    <link>https://zhengshutao.github.io/</link>
+    <description>Recent content on ShuTao Zheng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 13 Jun 2022 00:19:00 +0800</lastBuildDate><atom:link href="https://zhengshutao.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LeetCode - Tree</title>
+      <link>https://zhengshutao.github.io/posts/lh_tree/</link>
+      <pubDate>Mon, 13 Jun 2022 00:19:00 +0800</pubDate>
+      
+      <guid>https://zhengshutao.github.io/posts/lh_tree/</guid>
+      <description>LeetCode Practice</description>
+    </item>
+    
+    <item>
+      <title>Resume</title>
+      <link>https://zhengshutao.github.io/resume/</link>
+      <pubDate>Mon, 13 Jun 2022 00:19:00 +0800</pubDate>
+      
+      <guid>https://zhengshutao.github.io/resume/</guid>
+      <description>Undergrad Education University of Waterloo | Sept. 2018 - Present | Expected graduation in August 2023 Major &amp;amp; Minors Computational Mathematics Major Combinatorics and Optimization Minor Computing Minor Contact Information +1 (416) 801 - 5771 stzheng@uwaterloo.ca Qualifications Proficient in Python, C/C++, PHP, JavaScript/HTML/CSS/Node.js, Linux/Unix and R Indicated capacity to complete research, information management and reporting efficiently Strong knowledge of data structures, algorithms, Object-Oriented programming and multi-threaded programming through coursework and work experience. Experience Junior Software Engineer/Quality Assurance Engineer | AEC Daily Inc | Jan. 2023 - Apr. 2023 Conducted manual testing for a company website, utilizing a black box testing methodology to ensure functionality and identify potential issues. Collaborated with developers to implement solutions to identified issues and contributed to the development of new website features using PHP, Smarty, HTML, and CSS. Successfully identified and reported a high number of</description>
+    </item>
+    
+    <item>
+      <title>🙋🏻‍♂️About</title>
+      <link>https://zhengshutao.github.io/about/</link>
+      <pubDate>Sat, 06 Nov 2021 14:57:28 +0800</pubDate>
+      
+      <guid>https://zhengshutao.github.io/about/</guid>
+      <description>class Me: def __init__(self): self.name = &amp;#34;ShuTao Zheng&amp;#34; self.hometown = &amp;#34;FuZhou, FuJian, China&amp;#34; self.undergrad_school = &amp;#34;uWaterloo&amp;#34; self.graduation_time = 2023 self.curr_location = &amp;#34;Waterloo, ON, Canada&amp;#34;</description>
+    </item>
+    
+    
+  </channel>
+</rss>
