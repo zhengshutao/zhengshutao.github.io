@@ -9,19 +9,19 @@
     <lastBuildDate>Thu, 25 May 2023 00:00:00 +0800</lastBuildDate><atom:link href="https://zhengshutao.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LeetCode - Array</title>
-      <link>https://zhengshutao.github.io/posts/lh_array/</link>
+      <link>https://zhengshutao.github.io/posts/lc_array/</link>
       <pubDate>Thu, 25 May 2023 00:00:00 +0800</pubDate>
       
-      <guid>https://zhengshutao.github.io/posts/lh_array/</guid>
+      <guid>https://zhengshutao.github.io/posts/lc_array/</guid>
       <description>LeetCode Practice</description>
     </item>
     
     <item>
       <title>LeetCode - Tree</title>
-      <link>https://zhengshutao.github.io/posts/lh_tree/</link>
+      <link>https://zhengshutao.github.io/posts/lc_tree/</link>
       <pubDate>Thu, 25 May 2023 00:00:00 +0800</pubDate>
       
-      <guid>https://zhengshutao.github.io/posts/lh_tree/</guid>
+      <guid>https://zhengshutao.github.io/posts/lc_tree/</guid>
       <description>LeetCode Practice</description>
     </item>
     
