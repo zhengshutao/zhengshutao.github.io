@@ -119,8 +119,8 @@ var _hmt = _hmt || [];
   "keywords": [
     ""
   ],
-  "articleBody": "LC26. Remove Duplicates from Sorted Array Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same. Then return the number of unique elements in nums. Consider the number of unique elements of nums to be k, to get accepted, you need to do the following things: Change the array nums such that the first k elements of nums contain the unique elements in the order they were present in nums initially. The remaining elements of nums are not important as well as the size of nums. Return k. Example 1: Input: nums = [1,1,2] Output: 2, nums = [1,2,_] Explanation: Your function should return k = 2, with the first two elements of nums being 1 and 2 respectively. It does not matter what you leave beyond the returned k (hence they are underscores). Example 2: Input: nums = [0,0,1,1,1,2,2,3,3,4] Output: 5, nums = [0,1,2,3,4,_,_,_,_,_] Explanation: Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively. It does not matter what you leave beyond the returned k (hence they are underscores). class Solution(object): def removeDuplicates(self, nums): slow = 0 fast = 0 while fast \u003c len(nums): if nums[slow] != nums[fast]: slow +=1 nums[slow] = nums[fast] fast += 1 return slow + 1 LC27. Remove Element Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The order of the elements may be changed. Then return the number of elements in nums which are not equal to val. Consider the number of elements in nums which are not equal to val be k, to get accepted, you need to do the following things: * Change the array nums such that the first k elements of nums contain the elements which are not equal to val. The remaining elements of nums are not important as well as the size of nums. * Return k. Example 1: Input: nums = [3,2,2,3], val = 3 Output: 2, nums = [2,2,_,_] Explanation: Your function should return k = 2, with the first two elements of nums being 2. It does not matter what you leave beyond the returned k (hence they are underscores). Example 2: Input: nums = [0,1,2,2,3,0,4,2], val = 2 Output: 5, nums = [0,1,4,0,3,_,_,_] Explanation: Your function should return k = 5, with the first five elements of nums containing 0, 0, 1, 3, and 4. Note that the five elements can be returned in any order. It does not matter what you leave beyond the returned k (hence they are underscores). class Solution(object): def removeElement(self, nums, val): fast = 0 slow = 0 while fast \u003c len(nums): if nums[fast] != val: nums[slow] = nums[fast] slow += 1 fast += 1 return slow LC217. Contains Duplicate Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct. Example 1: Input: nums = [1,2,3,1] Output: true Example 2: Input: nums = [1,2,3,4] Output: false Example 3: Input: nums = [1,1,1,3,3,4,3,2,4,2] Output: true class Solution(object): def containsDuplicate(self, nums): s = set() for num in nums: if num in s: return True s.add(num) return False LC283. Move Zeroes Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements. Note that you must do this in-place without making a copy of the array. Example 1: Input: nums = [0,1,0,3,12] Output: [1,3,12,0,0] Example 2: Input: nums = [0] Output: [0] class Solution(object): def moveZeroes(self, nums): fast = 0 slow = 0 while fast \u003c len(nums): if nums[fast] != 0: nums[slow] = nums[fast] slow += 1 fast += 1 while slow \u003c len(nums): nums[slow] = 0 slow += 1 return nums ",
-  "wordCount" : "650",
+  "articleBody": "LC26. Remove Duplicates from Sorted Array Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same. Then return the number of unique elements in nums. Consider the number of unique elements of nums to be k, to get accepted, you need to do the following things: Change the array nums such that the first k elements of nums contain the unique elements in the order they were present in nums initially. The remaining elements of nums are not important as well as the size of nums. Return k. Example 1: Input: nums = [1,1,2] Output: 2, nums = [1,2,_] Explanation: Your function should return k = 2, with the first two elements of nums being 1 and 2 respectively. It does not matter what you leave beyond the returned k (hence they are underscores). Example 2: Input: nums = [0,0,1,1,1,2,2,3,3,4] Output: 5, nums = [0,1,2,3,4,_,_,_,_,_] Explanation: Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively. It does not matter what you leave beyond the returned k (hence they are underscores). class Solution(object): def removeDuplicates(self, nums): slow = 0 fast = 0 while fast \u003c len(nums): if nums[slow] != nums[fast]: slow +=1 nums[slow] = nums[fast] fast += 1 return slow + 1 LC27. Remove Element Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The order of the elements may be changed. Then return the number of elements in nums which are not equal to val. Consider the number of elements in nums which are not equal to val be k, to get accepted, you need to do the following things: * Change the array nums such that the first k elements of nums contain the elements which are not equal to val. The remaining elements of nums are not important as well as the size of nums. * Return k. Example 1: Input: nums = [3,2,2,3], val = 3 Output: 2, nums = [2,2,_,_] Explanation: Your function should return k = 2, with the first two elements of nums being 2. It does not matter what you leave beyond the returned k (hence they are underscores). Example 2: Input: nums = [0,1,2,2,3,0,4,2], val = 2 Output: 5, nums = [0,1,4,0,3,_,_,_] Explanation: Your function should return k = 5, with the first five elements of nums containing 0, 0, 1, 3, and 4. Note that the five elements can be returned in any order. It does not matter what you leave beyond the returned k (hence they are underscores). class Solution(object): def removeElement(self, nums, val): fast = 0 slow = 0 while fast \u003c len(nums): if nums[fast] != val: nums[slow] = nums[fast] slow += 1 fast += 1 return slow LC36. Valid Sudoku Determine if a 9 x 9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules: Each row must contain the digits 1-9 without repetition. Each column must contain the digits 1-9 without repetition. Each of the nine 3 x 3 sub-boxes of the grid must contain the digits 1-9 without repetition. Note: A Sudoku board (partially filled) could be valid but is not necessarily solvable. Only the filled cells need to be validated according to the mentioned rules. Example 1: Input: board = [[\"5\",\"3\",\".\",\".\",\"7\",\".\",\".\",\".\",\".\"] ,[\"6\",\".\",\".\",\"1\",\"9\",\"5\",\".\",\".\",\".\"] ,[\".\",\"9\",\"8\",\".\",\".\",\".\",\".\",\"6\",\".\"] ,[\"8\",\".\",\".\",\".\",\"6\",\".\",\".\",\".\",\"3\"] ,[\"4\",\".\",\".\",\"8\",\".\",\"3\",\".\",\".\",\"1\"] ,[\"7\",\".\",\".\",\".\",\"2\",\".\",\".\",\".\",\"6\"] ,[\".\",\"6\",\".\",\".\",\".\",\".\",\"2\",\"8\",\".\"] ,[\".\",\".\",\".\",\"4\",\"1\",\"9\",\".\",\".\",\"5\"] ,[\".\",\".\",\".\",\".\",\"8\",\".\",\".\",\"7\",\"9\"]] Output: true Example 2: Input: board = [[\"8\",\"3\",\".\",\".\",\"7\",\".\",\".\",\".\",\".\"] ,[\"6\",\".\",\".\",\"1\",\"9\",\"5\",\".\",\".\",\".\"] ,[\".\",\"9\",\"8\",\".\",\".\",\".\",\".\",\"6\",\".\"] ,[\"8\",\".\",\".\",\".\",\"6\",\".\",\".\",\".\",\"3\"] ,[\"4\",\".\",\".\",\"8\",\".\",\"3\",\".\",\".\",\"1\"] ,[\"7\",\".\",\".\",\".\",\"2\",\".\",\".\",\".\",\"6\"] ,[\".\",\"6\",\".\",\".\",\".\",\".\",\"2\",\"8\",\".\"] ,[\".\",\".\",\".\",\"4\",\"1\",\"9\",\".\",\".\",\"5\"] ,[\".\",\".\",\".\",\".\",\"8\",\".\",\".\",\"7\",\"9\"]] Output: false Explanation: Same as Example 1, except with the 5 in the top left corner being modified to 8. Since there are two 8's in the top left 3x3 sub-box, it is invalid. class Solution(object): def isValidSudoku(self, board): row_d = collections.defaultdict(set) col_d = collections.defaultdict(set) sqr_d = collections.defaultdict(set) for r in range(9): for c in range(9): if board[r][c] != \".\": num = board[r][c] if (num in row_d[r] or num in col_d[c] or num in sqr_d[(r//3,c//3)]): return False row_d[r].add(num) col_d[c].add(num) sqr_d[(r//3,c//3)].add(num) return True LC49. Group Anagrams Given an array of strings strs, group the anagrams together. You can return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once. Example 1: Input: strs = [\"eat\",\"tea\",\"tan\",\"ate\",\"nat\",\"bat\"] Output: [[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]] Example 2: Input: strs = [\"\"] Output: [[\"\"]] Example 3: Input: strs = [\"a\"] Output: [[\"a\"]] class Solution(object): def groupAnagrams(self, strs): hashmap = dict() for word in strs: atoz = [0 for i in range(26)] for c in word: atoz[ord(c) - ord(\"a\")] += 1 tuple_atoz = tuple(atoz) hashmap[tuple_atoz] = hashmap.get(tuple_atoz,[]) + [word] return hashmap.values() LC83. Remove Duplicates from Sorted List Given the head of a sorted linked list, delete all duplicates such that each element appears only once. Return the linked list sorted as well. Example 1: Input: head = [1,1,2] Output: [1,2] Example 2: Input: head = [1,1,2,3,3] Output: [1,2,3] class Solution(object): def deleteDuplicates(self, head): if head == None: return head now = head while now.next != None: if now.val == now.next.val: now.next = now.next.next else: now = now.next return head LC128. Longest Consecutive Sequence Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence. You must write an algorithm that runs in O(n) time. Example 1: Input: nums = [100,4,200,1,3,2] Output: 4 Explanation: The longest consecutive elements sequence is [1, 2, 3, 4]. Therefore its length is 4. Example 2: Input: nums = [0,3,7,2,5,8,4,6,0,1] Output: 9 class Solution(object): def longestConsecutive(self, nums): numset = set(nums) max_len = 0 for num in nums: if num - 1 not in numset: lenth = 1 while num + lenth in numset: lenth += 1 max_len = max(max_len, lenth) return max_len LC167. Two Sum II - Input Array Is Sorted Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number. Let these two numbers be numbers [index1] and numbers[index2] where 1 \u003c= index1 \u003c index2 \u003c numbers.length. Return the indices of the two numbers, index1 and index2, added by one as an integer array [index1, index2] of length 2. The tests are generated such that there is exactly one solution. You may not use the same element twice. Your solution must use only constant extra space. Example 1: Input: numbers = [2,7,11,15], target = 9 Output: [1,2] Explanation: The sum of 2 and 7 is 9. Therefore, index1 = 1, index2 = 2. We return [1, 2]. Example 2: Input: numbers = [2,3,4], target = 6 Output: [1,3] Explanation: The sum of 2 and 4 is 6. Therefore index1 = 1, index2 = 3. We return [1, 3]. Example 3: Input: numbers = [-1,0], target = -1 Output: [1,2] Explanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We return [1, 2]. class Solution(object): def twoSum(self, numbers, target): left = 0 right = len(numbers) - 1 while left \u003c right: s = numbers[left] + numbers[right] if s == target: return [left + 1, right + 1] elif s \u003e target: right -= 1 else: left += 1 LC217. Contains Duplicate Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct. Example 1: Input: nums = [1,2,3,1] Output: true Example 2: Input: nums = [1,2,3,4] Output: false Example 3: Input: nums = [1,1,1,3,3,4,3,2,4,2] Output: true class Solution(object): def containsDuplicate(self, nums): s = set() for num in nums: if num in s: return True s.add(num) return False LC238. Product of Array Except Self Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i]. The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer. You must write an algorithm that runs in O(n) time and without using the division operation. Example 1: Input: nums = [1,2,3,4] Output: [24,12,8,6] Example 2: Input: nums = [-1,1,0,-3,3] Output: [0,0,9,0,0] class Solution(object): def productExceptSelf(self, nums): lens = len(nums) forwd = [nums[0] for i in range(lens)] backwd = [nums[-1] for i in range(lens)] i = 1 while i \u003c lens: forwd[i] = forwd[i - 1] * nums[i] backwd[lens - i - 1] = backwd[lens - i] * nums[lens - i - 1] i += 1 result = [backwd[1] for i in range(lens)] result[-1] = forwd[-2] i = 1 while i \u003c lens - 1: result[i] = forwd[i - 1] * backwd[i + 1] i += 1 return result LC242. Valid Anagram Given two strings s and t, return true if t is an anagram of s, and false otherwise. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once. Example 1: Input: s = \"anagram\", t = \"nagaram\" Output: true Example 2: Input: s = \"rat\", t = \"car\" Output: false class Solution(object): def isAnagram(self, s, t): if len(s) != len(t): return False s_dict, t_dict = dict(), dict() for i in range(len(s)): s_dict[s[i]] = s_dict.get(s[i], 0) + 1 t_dict[t[i]] = t_dict.get(t[i], 0) + 1 return s_dict == t_dict LC283. Move Zeroes Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements. Note that you must do this in-place without making a copy of the array. Example 1: Input: nums = [0,1,0,3,12] Output: [1,3,12,0,0] Example 2: Input: nums = [0] Output: [0] class Solution(object): def moveZeroes(self, nums): fast = 0 slow = 0 while fast \u003c len(nums): if nums[fast] != 0: nums[slow] = nums[fast] slow += 1 fast += 1 while slow \u003c len(nums): nums[slow] = 0 slow += 1 return nums LC303. Range Sum Query - Immutable Given an integer array nums, handle multiple queries of the following type: * Calculate the sum of the elements of nums between indices left and right inclusive where left \u003c= right. Example 1: [[[-2, 0, 3, -5, 2, -1]], [0, 2], [2, 5], [0, 5]] Output [null, 1, -1, -3] Explanation NumArray numArray = new NumArray([-2, 0, 3, -5, 2, -1]); numArray.sumRange(0, 2); // return (-2) + 0 + 3 = 1 numArray.sumRange(2, 5); // return 3 + (-5) + 2 + (-1) = -1 numArray.sumRange(0, 5); // return (-2) + 0 + 3 + (-5) + 2 + (-1) = -3 class NumArray(object): def __init__(self, nums): presum = nums + [0] s = 0 temp = 0 i = 0 while i \u003c len(presum): temp = presum[i] presum[i] = s s += temp i += 1 self.presum = presum def sumRange(self, left, right): return self.presum[right + 1] - self.presum[left] LC344. Reverse String Write a function that reverses a string. The input string is given as an array of characters s. You must do this by modifying the input array in-place with O(1) extra memory. Example 1: Input: s = [\"h\",\"e\",\"l\",\"l\",\"o\"] Output: [\"o\",\"l\",\"l\",\"e\",\"h\"] Example 2: Input: s = [\"H\",\"a\",\"n\",\"n\",\"a\",\"h\"] Output: [\"h\",\"a\",\"n\",\"n\",\"a\",\"H\"] class Solution(object): def reverseString(self, s): left = 0 right = len(s)-1 while left \u003c= right: temp = s[left] s[left] = s[right] s[right] = temp left += 1 right -= 1 return s LC347. Top K Frequent Elements Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order. Example 1: Input: nums = [1,1,1,2,2,3], k = 2 Output: [1,2] Example 2: Input: nums = [1], k = 1 Output: [1] class Solution(object): def topKFrequent(self, nums, k): num_dict = dict() for num in nums: num_dict[num] = num_dict.get(num, 0) + 1 counts_array = [[] for i in range(len(nums))] for num in num_dict: counts_array[num_dict[num]-1] += [num] i = len(nums) - 1 result = [] while k \u003e 0: if counts_array[i] != []: result += counts_array[i] k -= len(counts_array[i]) i -= 1 return result ",
+  "wordCount" : "2002",
   "inLanguage": "en",
   "image":"https://zhengshutao.github.io/posts/img/Array.png","datePublished": "2023-05-25T00:00:00+08:00",
   "dateModified": "2023-05-25T00:00:00+08:00",
@@ -239,9 +239,29 @@ var _hmt = _hmt || [];
                 <li>
                     <a href="#" aria-label="LC27. Remove Element">LC27. Remove Element</a></li>
                 <li>
+                    <a href="#" aria-label="LC36. Valid Sudoku">LC36. Valid Sudoku</a></li>
+                <li>
+                    <a href="#" aria-label="LC49. Group Anagrams">LC49. Group Anagrams</a></li>
+                <li>
+                    <a href="#" aria-label="LC83. Remove Duplicates from Sorted List">LC83. Remove Duplicates from Sorted List</a></li>
+                <li>
+                    <a href="#" aria-label="LC128. Longest Consecutive Sequence">LC128. Longest Consecutive Sequence</a></li>
+                <li>
+                    <a href="#" aria-label="LC167. Two Sum II - Input Array Is Sorted">LC167. Two Sum II - Input Array Is Sorted</a></li>
+                <li>
                     <a href="#" aria-label="LC217. Contains Duplicate">LC217. Contains Duplicate</a></li>
                 <li>
-                    <a href="#" aria-label="LC283. Move Zeroes">LC283. Move Zeroes</a>
+                    <a href="#" aria-label="LC238. Product of Array Except Self">LC238. Product of Array Except Self</a></li>
+                <li>
+                    <a href="#" aria-label="LC242. Valid Anagram">LC242. Valid Anagram</a></li>
+                <li>
+                    <a href="#" aria-label="LC283. Move Zeroes">LC283. Move Zeroes</a></li>
+                <li>
+                    <a href="#" aria-label="LC303. Range Sum Query - Immutable">LC303. Range Sum Query - Immutable</a></li>
+                <li>
+                    <a href="#" aria-label="LC344. Reverse String">LC344. Reverse String</a></li>
+                <li>
+                    <a href="#" aria-label="LC347. Top K Frequent Elements">LC347. Top K Frequent Elements</a>
                 </li>
             </ul>
         </div>
@@ -342,7 +362,7 @@ var _hmt = _hmt || [];
 </span></span><span style="display:flex;"><span>            fast <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> slow <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
 </span></span></code></pre></div><h2>LC27. Remove Element</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The
 </span></span><span style="display:flex;"><span>order of the elements may be changed. Then return the number of elements in nums which are not equal
 </span></span><span style="display:flex;"><span>to val.
 </span></span><span style="display:flex;"><span>Consider the number of elements in nums which are not equal to val be k, to get accepted, you need 
@@ -373,6 +393,166 @@ var _hmt = _hmt || [];
 </span></span><span style="display:flex;"><span>                slow <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span>            fast <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> slow
+</span></span></code></pre></div><h2>LC36. Valid Sudoku</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Determine if a 9 x 9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Each row must contain the digits 1-9 without repetition.
+</span></span><span style="display:flex;"><span>Each column must contain the digits 1-9 without repetition.
+</span></span><span style="display:flex;"><span>Each of the nine 3 x 3 sub-boxes of the grid must contain the digits 1-9 without repetition.
+</span></span><span style="display:flex;"><span>Note:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>A Sudoku board (partially filled) could be valid but is not necessarily solvable.
+</span></span><span style="display:flex;"><span>Only the filled cells need to be validated according to the mentioned rules.
+</span></span><span style="display:flex;"><span>Example 1:
+</span></span><span style="display:flex;"><span>Input: board = 
+</span></span><span style="display:flex;"><span>[[&#34;5&#34;,&#34;3&#34;,&#34;.&#34;,&#34;.&#34;,&#34;7&#34;,&#34;.&#34;,&#34;.&#34;,&#34;.&#34;,&#34;.&#34;]
+</span></span><span style="display:flex;"><span>,[&#34;6&#34;,&#34;.&#34;,&#34;.&#34;,&#34;1&#34;,&#34;9&#34;,&#34;5&#34;,&#34;.&#34;,&#34;.&#34;,&#34;.&#34;]
+</span></span><span style="display:flex;"><span>,[&#34;.&#34;,&#34;9&#34;,&#34;8&#34;,&#34;.&#34;,&#34;.&#34;,&#34;.&#34;,&#34;.&#34;,&#34;6&#34;,&#34;.&#34;]
+</span></span><span style="display:flex;"><span>,[&#34;8&#34;,&#34;.&#34;,&#34;.&#34;,&#34;.&#34;,&#34;6&#34;,&#34;.&#34;,&#34;.&#34;,&#34;.&#34;,&#34;3&#34;]
+</span></span><span style="display:flex;"><span>,[&#34;4&#34;,&#34;.&#34;,&#34;.&#34;,&#34;8&#34;,&#34;.&#34;,&#34;3&#34;,&#34;.&#34;,&#34;.&#34;,&#34;1&#34;]
+</span></span><span style="display:flex;"><span>,[&#34;7&#34;,&#34;.&#34;,&#34;.&#34;,&#34;.&#34;,&#34;2&#34;,&#34;.&#34;,&#34;.&#34;,&#34;.&#34;,&#34;6&#34;]
+</span></span><span style="display:flex;"><span>,[&#34;.&#34;,&#34;6&#34;,&#34;.&#34;,&#34;.&#34;,&#34;.&#34;,&#34;.&#34;,&#34;2&#34;,&#34;8&#34;,&#34;.&#34;]
+</span></span><span style="display:flex;"><span>,[&#34;.&#34;,&#34;.&#34;,&#34;.&#34;,&#34;4&#34;,&#34;1&#34;,&#34;9&#34;,&#34;.&#34;,&#34;.&#34;,&#34;5&#34;]
+</span></span><span style="display:flex;"><span>,[&#34;.&#34;,&#34;.&#34;,&#34;.&#34;,&#34;.&#34;,&#34;8&#34;,&#34;.&#34;,&#34;.&#34;,&#34;7&#34;,&#34;9&#34;]]
+</span></span><span style="display:flex;"><span>Output: true
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Example 2:
+</span></span><span style="display:flex;"><span>Input: board = 
+</span></span><span style="display:flex;"><span>[[&#34;8&#34;,&#34;3&#34;,&#34;.&#34;,&#34;.&#34;,&#34;7&#34;,&#34;.&#34;,&#34;.&#34;,&#34;.&#34;,&#34;.&#34;]
+</span></span><span style="display:flex;"><span>,[&#34;6&#34;,&#34;.&#34;,&#34;.&#34;,&#34;1&#34;,&#34;9&#34;,&#34;5&#34;,&#34;.&#34;,&#34;.&#34;,&#34;.&#34;]
+</span></span><span style="display:flex;"><span>,[&#34;.&#34;,&#34;9&#34;,&#34;8&#34;,&#34;.&#34;,&#34;.&#34;,&#34;.&#34;,&#34;.&#34;,&#34;6&#34;,&#34;.&#34;]
+</span></span><span style="display:flex;"><span>,[&#34;8&#34;,&#34;.&#34;,&#34;.&#34;,&#34;.&#34;,&#34;6&#34;,&#34;.&#34;,&#34;.&#34;,&#34;.&#34;,&#34;3&#34;]
+</span></span><span style="display:flex;"><span>,[&#34;4&#34;,&#34;.&#34;,&#34;.&#34;,&#34;8&#34;,&#34;.&#34;,&#34;3&#34;,&#34;.&#34;,&#34;.&#34;,&#34;1&#34;]
+</span></span><span style="display:flex;"><span>,[&#34;7&#34;,&#34;.&#34;,&#34;.&#34;,&#34;.&#34;,&#34;2&#34;,&#34;.&#34;,&#34;.&#34;,&#34;.&#34;,&#34;6&#34;]
+</span></span><span style="display:flex;"><span>,[&#34;.&#34;,&#34;6&#34;,&#34;.&#34;,&#34;.&#34;,&#34;.&#34;,&#34;.&#34;,&#34;2&#34;,&#34;8&#34;,&#34;.&#34;]
+</span></span><span style="display:flex;"><span>,[&#34;.&#34;,&#34;.&#34;,&#34;.&#34;,&#34;4&#34;,&#34;1&#34;,&#34;9&#34;,&#34;.&#34;,&#34;.&#34;,&#34;5&#34;]
+</span></span><span style="display:flex;"><span>,[&#34;.&#34;,&#34;.&#34;,&#34;.&#34;,&#34;.&#34;,&#34;8&#34;,&#34;.&#34;,&#34;.&#34;,&#34;7&#34;,&#34;9&#34;]]
+</span></span><span style="display:flex;"><span>Output: false
+</span></span><span style="display:flex;"><span>Explanation: Same as Example 1, except with the 5 in the top left corner being modified to 8. Since there are two 8&#39;s in the top left 3x3 sub-box, it is invalid.
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>(object):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">isValidSudoku</span>(self, board):
+</span></span><span style="display:flex;"><span>        row_d <span style="color:#f92672">=</span> collections<span style="color:#f92672">.</span>defaultdict(set)
+</span></span><span style="display:flex;"><span>        col_d <span style="color:#f92672">=</span> collections<span style="color:#f92672">.</span>defaultdict(set)
+</span></span><span style="display:flex;"><span>        sqr_d <span style="color:#f92672">=</span> collections<span style="color:#f92672">.</span>defaultdict(set)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> r <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">9</span>):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> c <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">9</span>):
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> board[r][c] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;.&#34;</span>:
+</span></span><span style="display:flex;"><span>                    num <span style="color:#f92672">=</span> board[r][c]
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> (num <span style="color:#f92672">in</span> row_d[r]
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">or</span> num <span style="color:#f92672">in</span> col_d[c]
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">or</span> num <span style="color:#f92672">in</span> sqr_d[(r<span style="color:#f92672">//</span><span style="color:#ae81ff">3</span>,c<span style="color:#f92672">//</span><span style="color:#ae81ff">3</span>)]):
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>                    row_d[r]<span style="color:#f92672">.</span>add(num)
+</span></span><span style="display:flex;"><span>                    col_d[c]<span style="color:#f92672">.</span>add(num)
+</span></span><span style="display:flex;"><span>                    sqr_d[(r<span style="color:#f92672">//</span><span style="color:#ae81ff">3</span>,c<span style="color:#f92672">//</span><span style="color:#ae81ff">3</span>)]<span style="color:#f92672">.</span>add(num)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
+</span></span></code></pre></div><h2>LC49. Group Anagrams</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Given an array of strings strs, group the anagrams together. You can return the answer in any order.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Example 1:
+</span></span><span style="display:flex;"><span>Input: strs = [&#34;eat&#34;,&#34;tea&#34;,&#34;tan&#34;,&#34;ate&#34;,&#34;nat&#34;,&#34;bat&#34;]
+</span></span><span style="display:flex;"><span>Output: [[&#34;bat&#34;],[&#34;nat&#34;,&#34;tan&#34;],[&#34;ate&#34;,&#34;eat&#34;,&#34;tea&#34;]]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Example 2:
+</span></span><span style="display:flex;"><span>Input: strs = [&#34;&#34;]
+</span></span><span style="display:flex;"><span>Output: [[&#34;&#34;]]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Example 3:
+</span></span><span style="display:flex;"><span>Input: strs = [&#34;a&#34;]
+</span></span><span style="display:flex;"><span>Output: [[&#34;a&#34;]]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>(object):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">groupAnagrams</span>(self, strs):
+</span></span><span style="display:flex;"><span>        hashmap <span style="color:#f92672">=</span> dict()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> word <span style="color:#f92672">in</span> strs:
+</span></span><span style="display:flex;"><span>            atoz <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span> <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">26</span>)]
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> c <span style="color:#f92672">in</span> word:
+</span></span><span style="display:flex;"><span>                atoz[ord(c) <span style="color:#f92672">-</span> ord(<span style="color:#e6db74">&#34;a&#34;</span>)] <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>            tuple_atoz <span style="color:#f92672">=</span> tuple(atoz)
+</span></span><span style="display:flex;"><span>            hashmap[tuple_atoz] <span style="color:#f92672">=</span> hashmap<span style="color:#f92672">.</span>get(tuple_atoz,[]) <span style="color:#f92672">+</span> [word]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> hashmap<span style="color:#f92672">.</span>values()
+</span></span></code></pre></div><h2>LC83. Remove Duplicates from Sorted List</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Given the head of a sorted linked list, delete all duplicates such that each element appears 
+</span></span><span style="display:flex;"><span>only once. Return the linked list sorted as well.
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>Example 1:
+</span></span><span style="display:flex;"><span>Input: head = [1,1,2]
+</span></span><span style="display:flex;"><span>Output: [1,2]
+</span></span><span style="display:flex;"><span>Example 2:
+</span></span><span style="display:flex;"><span>Input: head = [1,1,2,3,3]
+</span></span><span style="display:flex;"><span>Output: [1,2,3]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>(object):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">deleteDuplicates</span>(self, head):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> head <span style="color:#f92672">==</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> head
+</span></span><span style="display:flex;"><span>        now <span style="color:#f92672">=</span> head
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> now<span style="color:#f92672">.</span>next <span style="color:#f92672">!=</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> now<span style="color:#f92672">.</span>val <span style="color:#f92672">==</span> now<span style="color:#f92672">.</span>next<span style="color:#f92672">.</span>val:
+</span></span><span style="display:flex;"><span>                now<span style="color:#f92672">.</span>next <span style="color:#f92672">=</span> now<span style="color:#f92672">.</span>next<span style="color:#f92672">.</span>next
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                now <span style="color:#f92672">=</span> now<span style="color:#f92672">.</span>next
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> head
+</span></span></code></pre></div><h2>LC128. Longest Consecutive Sequence</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>You must write an algorithm that runs in O(n) time.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Example 1:
+</span></span><span style="display:flex;"><span>Input: nums = [100,4,200,1,3,2]
+</span></span><span style="display:flex;"><span>Output: 4
+</span></span><span style="display:flex;"><span>Explanation: The longest consecutive elements sequence is [1, 2, 3, 4]. Therefore its length is 4.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Example 2:
+</span></span><span style="display:flex;"><span>Input: nums = [0,3,7,2,5,8,4,6,0,1]
+</span></span><span style="display:flex;"><span>Output: 9
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>(object):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">longestConsecutive</span>(self, nums):
+</span></span><span style="display:flex;"><span>        numset <span style="color:#f92672">=</span> set(nums)
+</span></span><span style="display:flex;"><span>        max_len <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> num <span style="color:#f92672">in</span> nums:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> num <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> numset:
+</span></span><span style="display:flex;"><span>                lenth <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">while</span> num <span style="color:#f92672">+</span> lenth <span style="color:#f92672">in</span> numset:
+</span></span><span style="display:flex;"><span>                    lenth <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>                max_len <span style="color:#f92672">=</span> max(max_len, lenth)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> max_len
+</span></span></code></pre></div><h2>LC167. Two Sum II - Input Array Is Sorted</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, find
+</span></span><span style="display:flex;"><span>two numbers such that they add up to a specific target number. Let these two numbers be numbers
+</span></span><span style="display:flex;"><span>[index1] and numbers[index2] where 1 &lt;= index1 &lt; index2 &lt; numbers.length.
+</span></span><span style="display:flex;"><span>Return the indices of the two numbers, index1 and index2, added by one as an integer array 
+</span></span><span style="display:flex;"><span>[index1, index2] of length 2.
+</span></span><span style="display:flex;"><span>The tests are generated such that there is exactly one solution. You may not use the same 
+</span></span><span style="display:flex;"><span>element twice.
+</span></span><span style="display:flex;"><span>Your solution must use only constant extra space.
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>Example 1:
+</span></span><span style="display:flex;"><span>Input: numbers = [2,7,11,15], target = 9
+</span></span><span style="display:flex;"><span>Output: [1,2]
+</span></span><span style="display:flex;"><span>Explanation: The sum of 2 and 7 is 9. Therefore, index1 = 1, index2 = 2. We return [1, 2].
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Example 2:
+</span></span><span style="display:flex;"><span>Input: numbers = [2,3,4], target = 6
+</span></span><span style="display:flex;"><span>Output: [1,3]
+</span></span><span style="display:flex;"><span>Explanation: The sum of 2 and 4 is 6. Therefore index1 = 1, index2 = 3. We return [1, 3].
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Example 3:
+</span></span><span style="display:flex;"><span>Input: numbers = [-1,0], target = -1
+</span></span><span style="display:flex;"><span>Output: [1,2]
+</span></span><span style="display:flex;"><span>Explanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We return [1, 2].
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>(object):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">twoSum</span>(self, numbers, target):
+</span></span><span style="display:flex;"><span>        left <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        right <span style="color:#f92672">=</span> len(numbers) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> left <span style="color:#f92672">&lt;</span> right:
+</span></span><span style="display:flex;"><span>            s <span style="color:#f92672">=</span> numbers[left] <span style="color:#f92672">+</span> numbers[right]
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> s <span style="color:#f92672">==</span> target:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> [left <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, right <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">elif</span> s <span style="color:#f92672">&gt;</span> target:
+</span></span><span style="display:flex;"><span>                right <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                left <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
 </span></span></code></pre></div><h2>LC217. Contains Duplicate</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>Given an integer array nums, return true if any value appears at least twice in the array, and 
 </span></span><span style="display:flex;"><span>return false if every element is distinct.
@@ -394,6 +574,58 @@ var _hmt = _hmt || [];
 </span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
 </span></span><span style="display:flex;"><span>            s<span style="color:#f92672">.</span>add(num)
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+</span></span></code></pre></div><h2>LC238. Product of Array Except Self</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i].
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>You must write an algorithm that runs in O(n) time and without using the division operation.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Example 1:
+</span></span><span style="display:flex;"><span>Input: nums = [1,2,3,4]
+</span></span><span style="display:flex;"><span>Output: [24,12,8,6]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Example 2:
+</span></span><span style="display:flex;"><span>Input: nums = [-1,1,0,-3,3]
+</span></span><span style="display:flex;"><span>Output: [0,0,9,0,0]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>(object):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">productExceptSelf</span>(self, nums):
+</span></span><span style="display:flex;"><span>        lens <span style="color:#f92672">=</span> len(nums)
+</span></span><span style="display:flex;"><span>        forwd <span style="color:#f92672">=</span> [nums[<span style="color:#ae81ff">0</span>] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(lens)]
+</span></span><span style="display:flex;"><span>        backwd <span style="color:#f92672">=</span> [nums[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(lens)]
+</span></span><span style="display:flex;"><span>        i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> i <span style="color:#f92672">&lt;</span> lens:
+</span></span><span style="display:flex;"><span>            forwd[i] <span style="color:#f92672">=</span> forwd[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> nums[i]
+</span></span><span style="display:flex;"><span>            backwd[lens <span style="color:#f92672">-</span> i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> backwd[lens <span style="color:#f92672">-</span> i] <span style="color:#f92672">*</span> nums[lens <span style="color:#f92672">-</span> i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>            i <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        result <span style="color:#f92672">=</span> [backwd[<span style="color:#ae81ff">1</span>] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(lens)]
+</span></span><span style="display:flex;"><span>        result[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> forwd[<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>]
+</span></span><span style="display:flex;"><span>        i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> i <span style="color:#f92672">&lt;</span> lens <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>            result[i] <span style="color:#f92672">=</span> forwd[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> backwd[i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>            i <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> result
+</span></span></code></pre></div><h2>LC242. Valid Anagram</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Example 1:
+</span></span><span style="display:flex;"><span>Input: s = &#34;anagram&#34;, t = &#34;nagaram&#34;
+</span></span><span style="display:flex;"><span>Output: true
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Example 2:
+</span></span><span style="display:flex;"><span>Input: s = &#34;rat&#34;, t = &#34;car&#34;
+</span></span><span style="display:flex;"><span>Output: false
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>(object):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">isAnagram</span>(self, s, t):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> len(s) <span style="color:#f92672">!=</span> len(t):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>        s_dict, t_dict <span style="color:#f92672">=</span> dict(), dict()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(s)):
+</span></span><span style="display:flex;"><span>            s_dict[s[i]] <span style="color:#f92672">=</span> s_dict<span style="color:#f92672">.</span>get(s[i], <span style="color:#ae81ff">0</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>            t_dict[t[i]] <span style="color:#f92672">=</span> t_dict<span style="color:#f92672">.</span>get(t[i], <span style="color:#ae81ff">0</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> s_dict <span style="color:#f92672">==</span> t_dict
 </span></span></code></pre></div><h2>LC283. Move Zeroes</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>Given an integer array nums, move all 0&#39;s to the end of it while maintaining the relative order
 </span></span><span style="display:flex;"><span>of the non-zero elements.
@@ -418,6 +650,83 @@ var _hmt = _hmt || [];
 </span></span><span style="display:flex;"><span>            nums[slow] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
 </span></span><span style="display:flex;"><span>            slow <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> nums
+</span></span></code></pre></div><h2>LC303. Range Sum Query - Immutable</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Given an integer array nums, handle multiple queries of the following type:
+</span></span><span style="display:flex;"><span>* Calculate the sum of the elements of nums between indices left and right inclusive where
+</span></span><span style="display:flex;"><span>left &lt;= right.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Example 1:
+</span></span><span style="display:flex;"><span>[[[-2, 0, 3, -5, 2, -1]], [0, 2], [2, 5], [0, 5]]
+</span></span><span style="display:flex;"><span>Output
+</span></span><span style="display:flex;"><span>[null, 1, -1, -3]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Explanation
+</span></span><span style="display:flex;"><span>NumArray numArray = new NumArray([-2, 0, 3, -5, 2, -1]);
+</span></span><span style="display:flex;"><span>numArray.sumRange(0, 2); // return (-2) + 0 + 3 = 1
+</span></span><span style="display:flex;"><span>numArray.sumRange(2, 5); // return 3 + (-5) + 2 + (-1) = -1
+</span></span><span style="display:flex;"><span>numArray.sumRange(0, 5); // return (-2) + 0 + 3 + (-5) + 2 + (-1) = -3
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NumArray</span>(object):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, nums):
+</span></span><span style="display:flex;"><span>        presum <span style="color:#f92672">=</span> nums <span style="color:#f92672">+</span> [<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>        s <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        temp <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> i <span style="color:#f92672">&lt;</span> len(presum):
+</span></span><span style="display:flex;"><span>            temp <span style="color:#f92672">=</span> presum[i]
+</span></span><span style="display:flex;"><span>            presum[i] <span style="color:#f92672">=</span> s
+</span></span><span style="display:flex;"><span>            s <span style="color:#f92672">+=</span> temp
+</span></span><span style="display:flex;"><span>            i <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>presum <span style="color:#f92672">=</span> presum
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sumRange</span>(self, left, right):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>presum[right <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">-</span> self<span style="color:#f92672">.</span>presum[left]
+</span></span></code></pre></div><h2>LC344. Reverse String</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>Write a function that reverses a string. The input string is given as an array of characters s.
+</span></span><span style="display:flex;"><span>You must do this by modifying the input array in-place with O(1) extra memory.
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>Example 1:
+</span></span><span style="display:flex;"><span>Input: s = [&#34;h&#34;,&#34;e&#34;,&#34;l&#34;,&#34;l&#34;,&#34;o&#34;]
+</span></span><span style="display:flex;"><span>Output: [&#34;o&#34;,&#34;l&#34;,&#34;l&#34;,&#34;e&#34;,&#34;h&#34;]
+</span></span><span style="display:flex;"><span>Example 2:
+</span></span><span style="display:flex;"><span>Input: s = [&#34;H&#34;,&#34;a&#34;,&#34;n&#34;,&#34;n&#34;,&#34;a&#34;,&#34;h&#34;]
+</span></span><span style="display:flex;"><span>Output: [&#34;h&#34;,&#34;a&#34;,&#34;n&#34;,&#34;n&#34;,&#34;a&#34;,&#34;H&#34;]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>(object):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">reverseString</span>(self, s):
+</span></span><span style="display:flex;"><span>        left <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        right <span style="color:#f92672">=</span> len(s)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> left <span style="color:#f92672">&lt;=</span> right:
+</span></span><span style="display:flex;"><span>            temp <span style="color:#f92672">=</span> s[left]
+</span></span><span style="display:flex;"><span>            s[left] <span style="color:#f92672">=</span> s[right]
+</span></span><span style="display:flex;"><span>            s[right] <span style="color:#f92672">=</span> temp
+</span></span><span style="display:flex;"><span>            left <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>            right <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> s
+</span></span></code></pre></div><h2>LC347. Top K Frequent Elements</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Example 1:
+</span></span><span style="display:flex;"><span>Input: nums = [1,1,1,2,2,3], k = 2
+</span></span><span style="display:flex;"><span>Output: [1,2]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Example 2:
+</span></span><span style="display:flex;"><span>Input: nums = [1], k = 1
+</span></span><span style="display:flex;"><span>Output: [1]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>(object):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">topKFrequent</span>(self, nums, k):
+</span></span><span style="display:flex;"><span>        num_dict <span style="color:#f92672">=</span> dict()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> num <span style="color:#f92672">in</span> nums:
+</span></span><span style="display:flex;"><span>            num_dict[num] <span style="color:#f92672">=</span> num_dict<span style="color:#f92672">.</span>get(num, <span style="color:#ae81ff">0</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        counts_array <span style="color:#f92672">=</span> [[] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(nums))]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> num <span style="color:#f92672">in</span> num_dict:
+</span></span><span style="display:flex;"><span>            counts_array[num_dict[num]<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">+=</span> [num]
+</span></span><span style="display:flex;"><span>        i <span style="color:#f92672">=</span> len(nums) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        result <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> k <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> counts_array[i] <span style="color:#f92672">!=</span> []:
+</span></span><span style="display:flex;"><span>                result <span style="color:#f92672">+=</span> counts_array[i]
+</span></span><span style="display:flex;"><span>                k <span style="color:#f92672">-=</span> len(counts_array[i])
+</span></span><span style="display:flex;"><span>            i <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> result
 </span></span></code></pre></div></section>
 
         </div>
