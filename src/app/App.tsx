@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import heroBg from "@/imports/890e88bf-8d8b-40b5-94af-aaa454a0cfb3.mp4";
 import uwSeal from "@/assets/uw-seal.svg";
 import avatarImg from "@/assets/avatar.jpg";
+import gradAvatar from "@/assets/grad-avatar.png";
 import {
   ChevronLeft, ChevronRight, X, Send, Download, ExternalLink,
   Github, Linkedin, Mail, Volume2, VolumeX,
@@ -154,12 +155,12 @@ function Navbar({
       >
         {/* Left — logo + name */}
         <div className="flex items-center gap-3 min-w-0">
-          <div
-            className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0"
-            style={{ background: "linear-gradient(135deg,#8b5cf6,#60a5fa)", ...display }}
-          >
-            ST
-          </div>
+          <img
+            src={gradAvatar}
+            alt="Shutao"
+            className="w-9 h-9 rounded-full object-cover flex-shrink-0"
+            style={{ border: "1px solid rgba(139,92,246,0.5)" }}
+          />
           <div className="hidden sm:flex flex-col leading-none">
             <span className="text-white font-semibold text-sm" style={display}>SHUTAO</span>
             <span className="text-[10px] text-violet-400" style={mono}>V2026</span>
